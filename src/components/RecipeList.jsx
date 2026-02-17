@@ -10,7 +10,7 @@ function RecipeList({ recipes, onSelect, favorites, setFavorites }) {
   }
 
   return (
-    <div className="grid gap-6 md:grid-cols-3 mt-6">
+    <div className="grid gap-6 md:grid-cols-4 mt-6">
       {recipes.map((recipe) => (
         <RecipeCard 
         key={recipe.idMeal} 
