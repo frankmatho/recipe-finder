@@ -3,6 +3,7 @@ import RecipeList from "../components/RecipeList";
 import RecipeModal from "../components/RecipeModal";
 import Navbar from "../components/Navbar";
 import { Routes, Route } from "react-router-dom";
+import { House, Heart, Moon, Power } from "lucide-react"
 
 function HomePage({ darkMode, setDarkMode, favorites, setFavorites }) {
   const [recipes, setRecipes] = useState([]);
@@ -140,29 +141,79 @@ function HomePage({ darkMode, setDarkMode, favorites, setFavorites }) {
       ></div>
 
     {/* Sidebar */}
-     <div className="absolute right-0 top-0 h-full w-80 bg-white dark:bg-gray-900 shadow-xl p-6 transition-transform duration-300">
+     <div
+  className={`absolute right-0 top-0 h-full w-80 bg-white text-orange-500 dark:bg-gray-900 shadow-2xl p-6 transform transition-transform duration-300 ${
+    sidebarOpen ? "translate-x-0" : "translate-x-full"
+  }`}
+>
 
-      <h2 className="text-xl text-orange-500 font-bold mb-6">Menu</h2>
+  {/* Profile Section */}
+  <div className="flex flex-col items-center border-b border-gray-200 dark:border-gray-700 pb-6">
 
-      <div className="flex text-orange-500 flex-col gap-4">
-        <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>
-          Profile
-        </button>
+    <img
+      src="https://i.pravatar.cc/150"
+      alt="Profile"
+      className="w-20 h-20 rounded-full object-cover mb-4 shadow-md"
+    />
 
-        <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>
-          Favorites
-        </button>
+    <h3 className="text-lg font-semibold">John Doe</h3>
+    <p className="text-sm text-gray-500 dark:text-gray-400">
+      john@example.com
+    </p>
 
-        <button className="cursor-pointer" onClick={() => setDarkMode(!darkMode)}>
-          Toggle Dark Mode
-        </button>
+  </div>
 
-        <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>
-          Close
-        </button>
-      </div>
-    
-     </div>
+  {/* Stats Section */}
+  <div className="mt-6 space-y-4">
+
+    <div className="flex justify-between items-center">
+      <span className="text-sm font-medium">Favorites</span>
+      <span className="bg-red-500 text-white text-xs px-3 py-1 rounded-full">
+        {favorites.length}
+      </span>
+    </div>
+
+  </div>
+
+  {/* Navigation */}
+  <div className="mt-8 space-y-4">
+
+    <button
+      onClick={() => setSidebarOpen(false)}
+      className="w-full text-left px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+    >
+      <House className="inline mr-2 w-4 h-4" />
+      Home
+    </button>
+
+    <button
+      onClick={() => setSidebarOpen(false)}
+      className="w-full text-left px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+    >
+      <Heart className="inline mr-2 w-4 h-4" />
+      Favorites
+    </button>
+
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      className="w-full text-left px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+    >
+      <Moon className="inline mr-2 w-4 h-4" />
+      Toggle Dark Mode
+    </button>
+
+  </div>
+
+  {/* Logout */}
+  <div className="mt-10">
+    <button className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition">
+      <Power className="inline mr-2 w-4 h-4" />
+      Logout
+    </button>
+  </div>
+
+</div>
+
   </div>
 )}
 

@@ -31,7 +31,7 @@ function RecipeCard({ recipe, onSelect, favorites, setFavorites }) {
 
         <button
           onClick={toggleFavorite}
-          className="mt-3 text-red-500 font-bold"
+          className="mt-3 text-red-500 font-bold cursor-pointer"
         >
           {isFavorite ? "❤️ Remove" : "🤍 Favorite"}
         </button>

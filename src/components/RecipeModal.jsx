@@ -12,7 +12,7 @@ function RecipeModal({ recipe, onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 transition-opacity duration-300">
-      <div className="bg-white max-w-2xl w-full rounded-xl p-6 overflow-y-auto max-h-[90vh] transform transition-all duration-300 scale-100">
+      <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-orange-500 max-w-2xl w-full rounded-xl p-6 overflow-y-auto max-h-[90vh] transform transition-all duration-300 scale-100">
 
         <button
           onClick={onClose}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar({ onSearch, darkMode, setDarkMode, setSidebarOpen }) {
   return (
-    <nav className="bg-green-600 text-white px-6 py-4 shadow-md">
+    <nav className="sticky top-0 z-50 bg-green-600 text-white px-6 py-4 shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
 
         {/* Left Side - Logo */}
